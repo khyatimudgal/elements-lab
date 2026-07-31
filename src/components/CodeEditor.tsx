@@ -10,8 +10,6 @@ type CodeEditorProps = {
 
 const EXTENSIONS = [
     javascript({ jsx: true, typescript: true }),
-    // The editor pane is the narrowest of the three, so long attribute values
-    // would otherwise scroll out of sight rather than reveal themselves.
     EditorView.lineWrapping,
 ];
 
