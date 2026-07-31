@@ -1,5 +1,7 @@
 # Elements Lab
 
+**Live demo: https://elements-lab.vercel.app**
+
 A live playground for [Unlayer Elements](https://github.com/unlayer/elements). Type JSX, see it
 render as email, web and PDF at once, and get a preflight audit of the email while you type.
 
