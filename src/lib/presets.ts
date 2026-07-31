@@ -89,33 +89,49 @@ export default function Content() {
 }
 `;
 
-const BROKEN = `import { Row, Column, Heading, Paragraph, Button, Image } from '@unlayer/react-elements';
+const BROKEN = `import {
+  Row, Column, Heading, Paragraph, Button, Image,
+} from '@unlayer/react-elements';
 
-export const config = { backgroundColor: '#ffffff', contentWidth: '600px' };
+export const config = {
+  backgroundColor: '#ffffff',
+  contentWidth: '600px',
+};
 
 const badTag = '{{ first name }}';
 const unclosedTag = '{{ expires_at';
+const hero = 'https://picsum.photos/seed/b/600/200';
+const terms = 'http://example.com/terms';
 
 export default function Content() {
   return (
     <>
       <Row>
         <Column>
-          <Image src="https://picsum.photos/seed/broken/600/200" />
+          <Image src={hero} />
 
           <Heading color="#c8d4e8" fontSize="26px">
             Can you read this heading?
           </Heading>
 
           <Paragraph color="#b9c4d4">
-            Hello {badTag}, your trial ends on {unclosedTag}.
+            Hello {badTag}, your trial ends
+            on {unclosedTag}.
           </Paragraph>
 
-          <Button href="#" backgroundColor="#dbe4f0" color="#ffffff">
+          <Button
+            href="#"
+            backgroundColor="#dbe4f0"
+            color="#ffffff"
+          >
             Upgrade now
           </Button>
 
-          <Button href="http://example.com/terms" backgroundColor="#64748b" color="#ffffff">
+          <Button
+            href={terms}
+            backgroundColor="#64748b"
+            color="#ffffff"
+          >
             Read the terms
           </Button>
         </Column>
