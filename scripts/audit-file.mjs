@@ -36,7 +36,7 @@ if (!target) {
 }
 const html = fs.readFileSync(target, 'utf8');
 const report = auditEmail(html, Buffer.byteLength(html));
-console.log(`\n${path.basename(target)} — ${report.errorCount} errors, ${report.warningCount} warnings, ${report.clipPercent.toFixed(0)}% of Gmail budget\n`);
+console.log(`\n${path.basename(target)}: ${report.errorCount} errors, ${report.warningCount} warnings, ${report.clipPercent.toFixed(0)}% of Gmail budget\n`);
 for (const f of report.findings) {
   console.log(` ${f.level === 'error' ? 'X' : f.level === 'warning' ? '!' : 'v'} ${f.title}${f.context ? `  [${f.context.slice(0,50)}]` : ''}`);
 }
